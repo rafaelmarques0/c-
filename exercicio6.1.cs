@@ -2,7 +2,7 @@
 public class ex6 { 
     static void Main(string[] args)
     {
-        int nota = 72;
+        int nota = 80;
         switch(nota)
         {
             case int n when (n >= 90):
@@ -17,9 +17,12 @@ public class ex6 {
             case int n when (n >= 60):
                 Console.WriteLine("classificaçao final = D ");
                 break;
-            default:
+            case int n when (n <50):
                 Console.WriteLine("classificaçao final = F ");
                 Console.WriteLine("nao passantes de ano");
+                break;
+            default:
+                Console.WriteLine("nota nao ativuida");
                 break;
         }
     }
