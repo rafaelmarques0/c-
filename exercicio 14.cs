@@ -8,7 +8,7 @@ public class exercicio14
         int numero = Maior(30, 20);
         Console.WriteLine("o numero maior é: "+numero);
         }
-    static int Maior (int a,int b)
+    public static int Maior (int a,int b)
     {
         if (a > b)
         {
