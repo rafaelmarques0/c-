@@ -2,7 +2,7 @@
 
 public class exercicio_16
 {
-
+    // metedo vazio para verificar se e par ou impar
     public static void parImpar(int a)
     {
         bool resultado = a % 2 == 0;
@@ -15,6 +15,7 @@ public class exercicio_16
             Console.WriteLine("o numero nao e par por isso nao e possivel calcular o quadrado");
         }
     }
+    // metedo vazio para calcular o quadrado
     public static void quadrado(int valor)
     {
         int resultado = valor * valor;
