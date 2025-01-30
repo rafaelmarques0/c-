@@ -21,6 +21,7 @@ public class exercicio_16
         int resultado = valor * valor;
        Console.WriteLine("o numero e par e o quadrado é "+ resultado);
     }
+    // metedo Main
     public static void Main(string[] args)
     {
         parImpar(15);
