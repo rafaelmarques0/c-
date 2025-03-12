@@ -8,96 +8,98 @@ public class exercicio19
     {
         
         //cria um dicionario
-        Dictionary<string, String> contactos = new Dictionary<string, String>();
+        Dictionary<String, String> contactos = new Dictionary<String, String>();
 
-            //mosta as opcões para o utilizador
+        String opcao;
+      do
+        { //mosta as opcões para o utilizador
             Console.WriteLine("seleciona a opção");
-        Console.WriteLine("1 - Adicionar contacto");
-        Console.WriteLine("2 - Pesquisar contactos");
-        Console.WriteLine("3 - remover contactos");
-        Console.WriteLine("4 - Sair");
+            Console.WriteLine("1 - Adicionar contacto");
+            Console.WriteLine("2 - Pesquisar contactos");
+            Console.WriteLine("3 - remover contactos");
+            Console.WriteLine("4 - Sair");
 
-        //varialvel para guardar a opção do utilizador
-        String opcao = Console.ReadLine();
+            //varialvel para guardar a opção do utilizador
+            opcao = Console.ReadLine();
 
-        //verifica a opção escolhida pelo utilizador
-        do {
+            //verifica a opção escolhida pelo utilizador
 
-        switch (opcao)
-        {
+            switch (opcao)
+            {
 
-            //opção para adicionar um contacto
-            case "1":
-                // pergunta o nome do contacto e aguarada
-                Console.WriteLine("Introduza o nome do contacto");
-                String nome = Console.ReadLine();
+                //opção para adicionar um contacto
+                case "1":
+
+                    // pergunta o nome do contacto e aguarada
+                    Console.WriteLine("Introduza o nome do contacto");
+                    String nome = Console.ReadLine();
 
                     // aguara o numero do contacto
                     Console.WriteLine("Introduza o numero do contacto");
-                String telefone = Console.ReadLine();
+                    String telefone = Console.ReadLine();
 
-                //adiciona o contacto ao dicionario
-                contactos.Add(nome,telefone);
-                 
-                Console.WriteLine("Contacto adicionado com sucesso");
+                    //adiciona o contacto ao dicionario
+                    contactos.Add(nome, telefone);
 
-                break;
+                    Console.WriteLine("Contacto adicionado com sucesso");
 
-            // opção para pesquisar um contacto
-            case "2":
+                    break;
 
-                Console.WriteLine("Introduza o nome do contacto");
+                // opção para pesquisar um contacto
+                case "2":
+                    contactos.Add("joao", "123456789");
+                    Console.WriteLine("Introduza o nome do contacto");
 
-                //pergunta o nome do contacto
-                string nome1 = Console.ReadLine();
+                    //pergunta o nome do contacto
+                    string nomepesquisado = Console.ReadLine();
 
-                //verifica se o contacto existe
-                if (contactos.ContainsKey(nome1))
-                {
-                    Console.WriteLine("O contacto " + nome1 + " existe");
-                    Console.WriteLine("nome: "+ nome1 +" numero: " + contactos[nome1]);
-                }
-                else
-                {
-                    Console.WriteLine("O contacto " + nome1 + " não existe");
-                }
+                    //verifica se o contacto existe
+                    if (contactos.ContainsKey(nomepesquisado))
+                    {
+                        Console.WriteLine($"O contacto {nomepesquisado}, existe");
+                        Console.WriteLine($"nome: {nomepesquisado} \nnumero: {contactos[nomepesquisado]}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"O contacto {nomepesquisado}, não existe");
+                    }
 
-                break;
+                    break;
 
-            // opção para adicionar varioa contactos
-            case "3":
-                // pergunta o nome do contacto e aguarada
-                Console.WriteLine("Introduza o nome do contacto");
-                String nome3 = Console.ReadLine();
+                // opção para adicionar varioa contactos
+                case "3":
+                    // pergunta o nome do contacto e aguarada
+                    Console.WriteLine("Introduza o nome do contacto");
+                    nomepesquisado = Console.ReadLine();
 
-                // verifica se o contacto existe
-                if (contactos.ContainsKey(nome3))
-                {
-                   contactos.Remove(nome3);
-                    Console.WriteLine("O contacto eliminado com sucesso");
-                }
-                else
-                {
-                    Console.WriteLine("O contacto ja eliminado ao nao existe");
-                }
-  
+                    // verifica se o contacto existe
+                    if (contactos.ContainsKey(nomepesquisado))
+                    {
+                        contactos.Remove(nomepesquisado);
+                        Console.WriteLine("O contacto eliminado com sucesso");
+                    }
+                    else
+                    {
+                        Console.WriteLine("O contacto ja eliminado ao nao existe");
+                    }
 
-                break;
+                    break;
 
-            //opção de  sai do programa
-            case "4":
+                //opção de  sai do programa
+                case "4":
 
-                Console.WriteLine("saindo do programa");
+                    Console.WriteLine("saindo do programa...");
 
-                break;
+                    break;
 
-            // caso o utilizador escolha uma opção que não existe
-            default:
+                // caso o utilizador escolha uma opção que não existe
+                default:
 
-                Console.WriteLine("opção invalinda ");
+                    Console.WriteLine("opção invalida ");
 
-                break;
-        }
-    } while (opcao != "4");
+                    break;
+            } 
+           
+       }while(opcao != "4");
     }
 }
